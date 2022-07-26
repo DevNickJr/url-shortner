@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+      
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+      
+        <link rel="stylesheet" href="style.css">
+        
+        <title><%= locals.title %> </title>
+      
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+          .attribution { font-size: 11px; text-align: center; }
+          .attribution a { color: hsl(228, 45%, 44%); }
+        </style>
+    </head>
+    <body id="body">
+        <header>
+            <div class="title-bar">
+                <nav class="nav-bar">
+                    <img src="./blog1.png" alt="Logo" width="100">
+                    <ul class="flex-row">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/create-blogs">Create Blog</a></li>
+                        <li><a href="/register">Register</a></li>
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+                </nav> 
+            </div>
+        </header>
+        <main>
+            <h1 class="heading">LINK SHORTNER</h1>
+            <form action="/shorten" method="POST">
+                <input type="text" name="longUrl" placeholder="Enter Link">
+                <input type="submit" value="Submit">   
+            </form>
+            <div class="urls">
+                <% for (let url of urls) { %>
+                    <div class="blog-div" style="color:Black;">
+                    <h1><%= url.longUrl %></h1>
+                    <p><%= url.shortUrl %></p>
+                    <a href="/<%= url.shortCode %>"><%= url.shortCode %></a>
+                    </div>
+                    <% } %> 
+            </div>
+        </main>
+    </body>
+</html>
