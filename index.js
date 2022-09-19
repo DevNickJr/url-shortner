@@ -37,7 +37,7 @@ app.post('/shorten', async (req, res) => {
     const longUrl = req.body.longUrl;
     console.log(longUrl);
     const shortCode = shortid.generate();
-    const shortUrl = `http://localhost:3000/${shortCode}`;
+    const shortUrl = `https://nick-url-shortner.heroku.com/${shortCode}`;
     const url = new Url({longUrl, shortUrl, shortCode});
     url.save();
     res.redirect('/');
