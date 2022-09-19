@@ -8,7 +8,8 @@ const validUrl = require('valid-url')
 const app = express()
 
 const main = async () => {
-    const db = await mongoose.connect('mongodb://localhost/url-shortener');
+    const db = await mongoose.connect('mongodb+srv://Nickjr:47313@cluster0.wivn8.mongodb.net/url-shortner?retryWrites=true&w=majority');
+
     console.log('Connected to MongoDB');
     app.listen(process.env.PORT || 3000, () => {
         console.log('Listening on port 3000');
